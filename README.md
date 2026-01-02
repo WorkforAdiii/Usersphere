@@ -1,4 +1,4 @@
-# Flask User Management System
+# UserSphere - Flask User Management System
 
 A modern, full-stack CRUD (Create, Read, Update, Delete) web application built with Flask and Firebase Firestore for managing user information.
 
@@ -190,7 +190,9 @@ This project is open source and available under the MIT License.
 
 ## 👨‍💻 Author
 
-Your Name
+**WorkforAdiii**
+
+GitHub: [@WorkforAdiii](https://github.com/WorkforAdiii)
 
 ## 🙏 Acknowledgments
 
