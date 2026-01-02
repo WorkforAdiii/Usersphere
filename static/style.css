@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* Header spacing */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+}
+
+.btn-success { background: #198754; }
+.btn-primary { background: #0d6efd; }
+.btn-danger { background: #dc3545; }
+
+/* Table spacing */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+/* Header */
+th {
+    background-color: #f8f9fa;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+/* Table rows */
+tbody tr {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+td {
+    padding: 14px;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+tbody tr td:first-child {
+    border-left: 1px solid #dee2e6;
+}
+
+tbody tr td:last-child {
+    border-right: 1px solid #dee2e6;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ===== FORM ONLY (NO TABLE IMPACT) ===== */
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0;
+}
+
+.form-header {
+    background-color: #0d6efd;
+    color: white;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+}
+
+form {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 40px 10px 12px; /* space for eye icon */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;   /* ✅ FIXES OVERFLOW */
+}
+
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+/* Validation */
+.error-input { border-color: #dc3545; }
+.success-input { border-color: #198754; }
+
+.form-group small {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Eye icon */
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #097ee5;
+}

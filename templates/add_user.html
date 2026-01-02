@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New User</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container form-container">
+    <div class="form-header">Add New User</div>
+
+    <form method="POST" id="userForm" novalidate>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   placeholder="Enter Full Name">
+            <small></small>
+        </div>
+
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="text"
+                   id="contact"
+                   name="contact"
+                   placeholder="Enter Contact Number"
+                   maxlength="10"
+                   oninput="allowOnlyNumbers(this)"
+                   onblur="checkDuplicate('contact', this.value, this)">
+            <small></small>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="Enter Email"
+                   onblur="checkDuplicate('email', this.value, this)">
+            <small></small>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password"
+                   id="password"
+                   placeholder="Enter Password">
+            <span class="password-toggle"
+                  onclick="togglePassword('password', this)">👁</span>
+            <small></small>
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password"
+                   id="confirm_password"
+                   placeholder="Confirm Password">
+            <span class="password-toggle"
+                  onclick="togglePassword('confirm_password', this)">👁</span>
+            <small></small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="/" class="btn btn-danger">Back</a>
+
+    </form>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

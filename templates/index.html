@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>FLASK Based CRUD Application system</h2>
+        <a href="/add" class="btn btn-success">Add New User</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Registered At</th>
+            <th>Last Updated At</th>
+            <th>Action</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+    <td>{{ user.user_id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.contact }}</td>
+    <td>{{ user.created_at }}</td>
+    <td>{{ user.updated_at }}</td>
+    <td>
+        <a href="/edit/{{ user.doc_id }}" class="btn btn-primary">Edit</a>
+        <a href="/delete/{{ user.doc_id }}" class="btn btn-danger"
+           onclick="return confirm('Delete this user?')">Delete</a>
+    </td>
+</tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
