@@ -4,8 +4,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# ---------- Time Formatter ----------
-
 
 def format_time(dt):
     day = dt.day
@@ -13,8 +11,6 @@ def format_time(dt):
         1: "st", 2: "nd", 3: "rd"
     }.get(day % 10, "th")
     return dt.strftime(f"{day}{suffix} %b %I:%M %p")
-
-# ---------- Home ----------
 
 
 @app.route('/')
@@ -28,8 +24,6 @@ def index():
         users.append(data)
 
     return render_template('index.html', users=users)
-
-# ---------- AJAX DUPLICATE CHECK ----------
 
 
 @app.route('/check-duplicate', methods=['POST'])
@@ -45,8 +39,6 @@ def check_duplicate():
         return jsonify({'status': 'contact'})
 
     return jsonify({'status': 'ok'})
-
-# ---------- Create ----------
 
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -82,8 +74,6 @@ def add_user():
 
     return render_template('add_user.html')
 
-# ---------- Update ----------
-
 
 @app.route('/edit/<doc_id>', methods=['GET', 'POST'])
 def edit_user(doc_id):
@@ -100,15 +90,12 @@ def edit_user(doc_id):
 
     return render_template('edit_user.html', user=ref.get().to_dict())
 
-# ---------- Delete & REORDER IDS ----------
-
 
 @app.route('/delete/<doc_id>')
 def delete_user(doc_id):
     users_ref = db.collection('users')
     users_ref.document(doc_id).delete()
 
-    # 🔁 Reassign IDs
     docs = list(users_ref.order_by('user_id').stream())
     for index, doc in enumerate(docs, start=1):
         users_ref.document(doc.id).update({'user_id': index})

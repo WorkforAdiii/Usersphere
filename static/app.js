@@ -1,13 +1,7 @@
-/* ================================
-   Allow ONLY numbers in contact
-================================ */
 function allowOnlyNumbers(input) {
   input.value = input.value.replace(/\D/g, "");
 }
 
-/* ================================
-   Toggle password visibility
-================================ */
 function togglePassword(inputId, icon) {
   const input = document.getElementById(inputId);
   if (input.type === "password") {
@@ -19,9 +13,6 @@ function togglePassword(inputId, icon) {
   }
 }
 
-/* ================================
-   Show password section on email change
-================================ */
 function checkEmailChange(input) {
   const originalEmail = input.dataset.original;
   const passwordSection = document.getElementById("password-section");
@@ -33,9 +24,6 @@ function checkEmailChange(input) {
   }
 }
 
-/* ================================
-   AJAX duplicate check (NO refresh)
-================================ */
 async function checkDuplicate(type, value, input, docId = null) {
   if (!value) return;
 
@@ -56,10 +44,6 @@ async function checkDuplicate(type, value, input, docId = null) {
     input.focus();
   }
 }
-
-/* ================================
-   Edit form validation
-================================ */
 document
   .getElementById("editUserForm")
   ?.addEventListener("submit", function (e) {
